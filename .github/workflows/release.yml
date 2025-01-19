@@ -21,7 +21,7 @@ jobs:
     - name: Run build script
       shell: pwsh
       run: |
-        Add-Alias -Name w3strings -Value ${{ github.workspace }}\w3strings
+        New-Alias -Name w3strings -Value ${{ github.workspace }}\w3strings
         .\build.ps1 -idFixedPart 9990
 
     - name: Upload build artifact
