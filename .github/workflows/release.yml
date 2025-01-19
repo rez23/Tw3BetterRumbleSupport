@@ -1,6 +1,10 @@
 name: Build and Release
 
-
+on:
+  push:
+    branches:
+      - master
+    
 jobs:
   build:
     runs-on: windows-latest
