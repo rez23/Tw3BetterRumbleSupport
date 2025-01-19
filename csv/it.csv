@@ -2,7 +2,7 @@
 ; id      |key(hex)|key(str)| text
 2119990109|        |panel_Mods|Mods
 2119990110|        |panel_BetterRumbleSupport|Better Rumble Support
-2119990111|        |preset_Mods_BetterRumbleSupport|Impostazioni Rumble
+2119990111|        |preset_Mods_BetterRumbleSupport|Settaggi vibrazione
 2119990114|        |option_BRS_IsEnabled|Abilita/Disabilita BRS
 2119990115|        |option_BRS_RumbleOnGeraltAttack|Vibra per gli attacchi di Geralt
 2119990116|        |option_BRS_RumbleOnEnemyAttck|Vibra per gli attacchi subiti
