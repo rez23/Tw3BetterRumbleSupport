@@ -13,9 +13,14 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Download w3string encoder
+      run: |
+        powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Invoke-WebRequest -Uri '${{ secrets.ENCODER_URI }}' -OutFile 'w3strings.exe'"
+
     - name: Run build script
       run: |
-        powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\build.ps1
+        echo "./" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+        powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\build.ps1 -IdFixedPart 9990
 
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
@@ -28,14 +33,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Download build artifact
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: mod-zip
         path: build
 
     - name: Create Release
       id: create_release
-      uses: actions/create-release@v1
+      uses: actions/create-release@v2
       env:
         GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       with:
