@@ -72,7 +72,7 @@ $w3stringList | ForEach-Object {
     $language = Split-Path -Path $_ -LeafBase
 
     Write-Host "INFO - Encoding ${language}.csv"
-    w3strings.exe --encode $_ --id-space $IdFixedPart
+    w3strings --encode $_ --id-space $IdFixedPart
     Remove-Item -Path $_ -Force
 }
 
