@@ -7,6 +7,7 @@
             "label": "Build mod",
             "type": "shell",
             "command": ".\\build.ps1",
+            "args": ["-idFixedPart", "9990"],
             "problemMatcher": [],
             "group": {
                 "kind": "build",
