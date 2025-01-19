@@ -1,6 +1,8 @@
 param(
     [Parameter(Mandatory=$false)]
-    [bool]$DebugMode = $false
+    [bool]$DebugMode = $false,
+    [Parameter(Mandatory=$true)]
+    [number]$idFixedPart
 )
 
 # Get mod name from folder
@@ -70,7 +72,7 @@ $w3stringList | ForEach-Object {
     $language = Split-Path -Path $_ -LeafBase
 
     Write-Host "INFO - Encoding ${language}.csv"
-    w3strings.exe --encode $_ --id-space 9990
+    w3strings.exe --encode $_ --id-space $IdFixedPart
     Remove-Item -Path $_ -Force
 }
 
