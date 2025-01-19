@@ -21,7 +21,7 @@ $manifestDir = "${projectDir}\manifests"
 $tempDir = New-Item -ItemType Directory -Path ($env:TEMP + "\\TempBuildFolder") -Force
 
 # Set up build dir
-$outPutDir = New-Item -ItemType -Directory -Path "${projectDir}\build" -Force
+$outPutDir = New-Item -ItemType Directory -Path "${projectDir}\build" -Force
 $modDestRoot = New-Item -ItemType Directory -Path "${tempDir}\build-${modName}" -Force
 $modDestContentDir = New-Item -ItemType Directory -Path "${tempDir}\build-${modName}\mods\mod${modName}\content" -Force
 
