@@ -1,0 +1,6 @@
+enum RumbleType {
+    RumbleVeryLow = 0,
+    RumbleLow = 1,
+    RumbleHight = 2,
+    RumbleVeryHight = 3,
+}

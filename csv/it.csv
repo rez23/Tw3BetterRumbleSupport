@@ -9,5 +9,6 @@
 2119990117|        |option_BRS_RumbleOnRunAction|Vibra quando inzi a correre
 2119990118|        |option_BRS_RumbleOnFatique|Vibra per affaticamento
 2119990119|        |option_BRS_RumbleOnHorseFatique|Vibra quando il cavallo rallenta
+2119990120|        |option_BRS_RumbleOnLowHealth|Vibra quando la vita è critica
 2119990126|        |preset_value_BRS_Disable|Spento
 2119990127|        |preset_value_BRS_Default|Acceso

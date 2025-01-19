@@ -7,7 +7,8 @@
 2119990115|        |option_BRS_RumbleOnGeraltAttack|Rumble for Geralt attack
 2119990116|        |option_BRS_RumbleOnEnemyAttck|Rumble for big damage
 2119990117|        |option_BRS_RumbleOnRunAction|Rumble for run action
-2119990118|        |option_BRS_RumbleOnFatique|Rumble for fatique
+2119990118|        |option_BRS_RumbleOnFatique|Rumble for fatigue
 2119990119|        |option_BRS_RumbleOnHorseFatique|Rumble os horse speed lose
+2119990120|        |option_BRS_RumbleOnLowHealth|Rumble when health is critic
 2119990126|        |preset_value_BRS_Disable|Off
 2119990127|        |preset_value_BRS_Default|On
