@@ -2,8 +2,10 @@ name: Build and Release
 
 on:
   push:
-    -tags:
+    tags:
       - 'v*.*'
+    branches:
+      - actions-test
     
 jobs:
   build:
@@ -27,8 +29,8 @@ jobs:
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
       with:
-        name: mod-zip
-        path: build/*.zip
+        name: BetterRumbleSupport.zip
+        path: build/
 
   release:
     needs: build
@@ -41,7 +43,7 @@ jobs:
     - name: Download build artifact
       uses: actions/download-artifact@v3
       with:
-        name: mod-zip
+        name: BetterRumbleSupport.zip
         path: build/
 
     - name: Create GitHub Release
