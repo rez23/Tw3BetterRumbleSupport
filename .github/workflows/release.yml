@@ -45,6 +45,10 @@ jobs:
       with:
         path: ./build
 
+    - name: Show files
+      run: |
+        Get-ChildItem -Path ./build
+        
     - name: Create GitHub Release
       uses: actions/create-release@v1
       id: create_release
