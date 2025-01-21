@@ -43,7 +43,7 @@ jobs:
     - name: Download build artifact
       uses: actions/download-artifact@v3
       with:
-        name: BetterRumbleSupport
+        name: ModInstallableZip
         path: ./build
 
     - name: Create GitHub Release
