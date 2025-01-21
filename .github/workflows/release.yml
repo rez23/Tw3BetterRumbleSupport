@@ -27,8 +27,8 @@ jobs:
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
       with:
-        name: BetterRumbleSupport.zip
-        path: build/
+        name: build
+        path: ./build/*.zip
 
   release:
     needs: build
@@ -40,12 +40,14 @@ jobs:
 
     - name: Download build artifact
       uses: actions/download-artifact@v3
-      with:
-        name: BetterRumbleSupport.zip
-        path: build/
+
+    - name: Show files
+      run: |
+        Get-ChildItem -Path ./build
 
     - name: Create GitHub Release
       uses: actions/create-release@v1
+      id: create_release
       env:
         GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       with:
@@ -53,4 +55,13 @@ jobs:
         release_name: Release ${{ github.ref_name }}
         draft: false
         prerelease: false
-        files: build/*.zip
+    - name: Upload Release Asset
+      id: upload-release-asset 
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+        asset_path: ./build/${{ github.event.repository.name }}.zip
+        asset_name: ${{ github.event.repository.name }}.zip
+        asset_content_type: application/zip
