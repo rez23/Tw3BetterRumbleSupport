@@ -4,8 +4,6 @@ on:
   push:
     tags:
       - 'v*.*'
-    branches:
-      - actions-test
     
 jobs:
   build:
