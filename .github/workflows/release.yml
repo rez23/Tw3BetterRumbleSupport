@@ -29,7 +29,7 @@ jobs:
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
       with:
-        name: BetterRumbleSupport
+        name: build
         path: ./build/*.zip
 
   release:
@@ -42,13 +42,11 @@ jobs:
 
     - name: Download build artifact
       uses: actions/download-artifact@v3
-      with:
-        path: ./build
 
     - name: Show files
       run: |
         Get-ChildItem -Path ./build
-        
+
     - name: Create GitHub Release
       uses: actions/create-release@v1
       id: create_release
